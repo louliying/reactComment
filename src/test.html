@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+    <textarea id="tx">我是语言\n空洞的瞳孔</textarea>
+    <button onclick="sll()">click me.</button>
+    <script>
+        function sll () {
+            var dTx = document.getElementById('tx');
+            var sText = dTx.value;
+            console.log('sText 000:', sText);
+            var reg = new RegExp(/\\n/, 'g');
+            var s = sText.replace(reg,'\r\n');
+            console.log('sText 111:', s);
+            dTx.value = s;
+            // dTx.innerHTML = sText;
+        }
+    </script>
+</body>
+</html>
